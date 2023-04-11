@@ -19,7 +19,7 @@ export const Main = ({ data }) => {
           >
             <Row>
               <Col lg={4} md={4} sm={4}>
-                <DivFlex style={{ paddingLeft: "20px" }}>
+                <DivFlex img={true} style={{ paddingLeft: "20px" }}>
                   <StyledImg
                     src={thumbnail}
                     alt={id}
@@ -33,7 +33,7 @@ export const Main = ({ data }) => {
                 <DivFlex
                   style={{
                     flexDirection: "column",
-                    padding: "15px 0px 10px 0px",
+                    padding: "15px 0px 10px 20px",
                   }}
                 >
                   <StyledH6>
@@ -89,13 +89,27 @@ const MainWrap = styled.div`
 
 const DivFlex = styled.div`
   display: flex;
+  @media (max-width: 600px) {
+    ${({ img }) =>
+      img &&
+      `
+  justify-content:center;
+
+  `}
+  } ;
 `;
 const StyledImg = styled.img`
   object-fit: contain;
-  max-height: 175px;
+  width: auto;
+  min-height: 175px;
+  max-height: 180px;
+  @media (max-width) {
+    margin: auto;
+  }
 `;
 const StyledH6 = styled.h6`
   text-align: left;
+  margin-bottom: 5px;
 `;
 const ValueSpan = styled.span`
   font-size: 13px;

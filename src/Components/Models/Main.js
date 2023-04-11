@@ -51,7 +51,9 @@ export const Main = ({ data }) => {
                   <StyledH6>
                     <TitleSpan> Rating </TitleSpan>:{" "}
                     <ValueSpan style={{ color: "tomato", fontSize: "15px" }}>
-                      {Array(Math.round(rating)).fill("*").join(" ")}
+                      {Array(Math.round(rating * 1))
+                        .fill("*")
+                        .join(" ")}
                     </ValueSpan>
                   </StyledH6>
                 </DivFlex>
